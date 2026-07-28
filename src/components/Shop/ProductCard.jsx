@@ -39,17 +39,23 @@ function ProductCard({ product }) {
             <Star
               key={i}
               size={11}
-              className={i < rating ? "text-yellow-400 fill-yellow-400" : "text-white/15"}
+              className={
+                i < rating ? "text-yellow-400 fill-yellow-400" : "text-white/15"
+              }
             />
           ))}
-          <span className="text-white/30 text-xs ml-1">({product.rating?.count || 0})</span>
+          <span className="text-white/30 text-xs ml-1">
+            ({product.rating?.count || 0})
+          </span>
         </div>
-
+        <hr className="border-t border-white/50 my-2.5" />
         <div className="flex items-center justify-between mt-3">
-          <p className="text-lime-400 font-bold">${product.price.toFixed(2)}</p>
+          <p className="text-lime-400 font-semibold min-[500px]:font-bold text-sm sm:text-base">
+            ${product.price.toFixed(2)}
+          </p>
           <button
             onClick={() => addToCart(product)}
-            className="flex items-center gap-1 bg-lime-400 text-black text-xs font-bold px-3 py-2 rounded-lg hover:bg-lime-300 transition-colors"
+            className="flex items-center gap-1 bg-lime-400 text-black text-xs font-bold px-2 min-[500px]:px-3  py-2 rounded-lg hover:bg-lime-300 transition-colors "
           >
             <ShoppingCart size={13} /> Add
           </button>

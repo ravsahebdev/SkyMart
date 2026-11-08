@@ -48,7 +48,7 @@ function ProductCard({ product }) {
             ({product.rating?.count || 0})
           </span>
         </div>
-        <hr className="border-t border-white/50 my-2.5" />
+        <hr className="border-t border-white/5 0 my-2.5" />
         <div className="flex items-center justify-between mt-3">
           <p className="text-lime-400 font-semibold min-[500px]:font-bold text-sm sm:text-base">
             ${product.price.toFixed(2)}

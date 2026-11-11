@@ -11,6 +11,13 @@ import Shop from "./pages/Shop";
 import ProductDetail from "./pages/ProductDetail";
 import About from "./pages/About";
 
+// NEW pages (TanStack Query + Redux Toolkit + Thunk)
+import Explore from "./pages/Explore";
+import Wishlist from "./pages/Wishlist";
+import Checkout from "./pages/Checkout";
+import Orders from "./pages/Orders";
+import QuickDock from "./components/QuickDock/QuickDock";
+
 function App() {
   return (
     <AuthProvider>
@@ -51,10 +58,47 @@ function App() {
               </ProtectedRoute>
             }
           />
+
+          {/* NEW routes */}
+          <Route
+            path="/explore"
+            element={
+              <ProtectedRoute>
+                <Explore />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/wishlist"
+            element={
+              <ProtectedRoute>
+                <Wishlist />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/checkout"
+            element={
+              <ProtectedRoute>
+                <Checkout />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/orders"
+            element={
+              <ProtectedRoute>
+                <Orders />
+              </ProtectedRoute>
+            }
+          />
         </Routes>
 
         {/* cart drawer globally mounted - kisi bhi page se khul sakta hai */}
         <CartDrawer />
+
+        {/* NEW: floating dock - Explore / Wishlist / Orders / Checkout links */}
+        <QuickDock />
       </CartProvider>
     </AuthProvider>
   );
